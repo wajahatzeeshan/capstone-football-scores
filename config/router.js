@@ -1,15 +1,15 @@
 import express from "express";
-import moviesController from "../controllers/moviesController.js";
+import moviesController from "../controllers/matchesController.js";
 
 const Router = express.Router();
 
-Router.route("/movies")
-  .get(moviesController.getAllMovies)
-  .post(moviesController.createMovie);
+Router.route("/match")
+  .get(moviesController.getAllScores)
+  .post(moviesController.createScore);
 
-Router.route("/movies/:id")
-  .get(moviesController.getSingleMovie)
-  .put(moviesController.updateMovie)
-  .delete(moviesController.deleteMovie);
+Router.route("/match/:id")
+  .get(moviesController.getSingleScore)
+  .put(moviesController.updateScore)
+  .delete(moviesController.deleteScore);
 
 export default Router;
