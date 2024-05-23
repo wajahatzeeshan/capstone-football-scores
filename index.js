@@ -1,5 +1,4 @@
 import express from "express";
-z
 import Router from "./config/router.js";
 import dotenv from "dotenv";
 import { connectDb } from "./db/helpers.js";
