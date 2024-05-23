@@ -1,3 +1,4 @@
+import { query } from "express";
 import Match from "../models/match.js";
 
 async function getAllScores(req, res, next) {
@@ -74,10 +75,41 @@ async function updateScore(req, res, next) {
   }
 }
 
+async function filterMatch(req, res, next) {
+  const { team } = req.query;
+  console.log("team:" + team)
+
+  try {
+    const match = await Match.find({team: team});
+
+    if (!match) {
+      return res.status(404).send({ message: "The match does not exist" });
+    }
+
+    return res.status(200).json(match);
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function getMatchStats(req, res, next) {
+  const { category } = req.query;
+
+  try {
+    const datastats = await Match.aggregate().sortByCount(category);
+    res.status(200).send(datastats);
+  } catch (err) {
+    next(err);
+  }
+}
+
+
 export default {
   getAllScores,
   createScore,
   getSingleScore,
   updateScore,
   deleteScore,
+  filterMatch,
+  getMatchStats
 };
