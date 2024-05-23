@@ -11,6 +11,6 @@ const matchSchema = new mongoose.Schema({
   // currentlyBorrowed: { required: true, type: Boolean },
 });
 
-const Match = mongoose.model("Match", matchSchema);
+const Match = mongoose.model("match", matchSchema);
 
 export default Match;
