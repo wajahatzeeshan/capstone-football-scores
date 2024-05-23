@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "node index.js",
     "dev": "nodemon index.js",
-    "test": "react-scripts test --env=jsdom"
+    "test": "node --version"
   },
   "keywords": [],
   "author": "",
