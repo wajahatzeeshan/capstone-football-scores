@@ -103,16 +103,6 @@ async function getMatchStats(req, res, next) {
   }
 }
 
-// async function getAvailableBooks(req, res, next) {
-//   try {
-//     const availableBooks = await Book.find({ currentlyBorrowed: false });
-//     return res.status(200).json(availableBooks)
-//   } catch (err) {
-//     next(err)
-//   }
-// }
-
-
 
 export default {
   getAllScores,
