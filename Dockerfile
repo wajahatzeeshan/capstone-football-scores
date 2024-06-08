@@ -1,3 +1,4 @@
+# Description: Dockerfile for the Node.js application
 FROM node:16-alpine
 
 # take environment variables
